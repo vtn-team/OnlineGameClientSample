@@ -18,6 +18,7 @@ public class WebSocketManager : MonoBehaviour
 
     WebSocketCli client = new WebSocketCli();
 
+    List<string> ChatLog = new List<string>();
     Queue<ISendData> DataQueue = new Queue<ISendData>();
     Queue<ChatMsgResult> ChatQueue = new Queue<ChatMsgResult>();
 
@@ -33,8 +34,13 @@ public class WebSocketManager : MonoBehaviour
         {
             foreach (var msg in ChatQueue)
             {
-                _chatText.text += $"{msg.Name}: {msg.Message}\n";
+                ChatLog.Add($"{msg.Name}: {msg.Message}");
             }
+            while(ChatLog.Count > 12)
+            {
+                ChatLog.RemoveAt(0);
+            }
+            _chatText.text = string.Join("\n", ChatLog);
             ChatQueue.Clear();
         }
 
