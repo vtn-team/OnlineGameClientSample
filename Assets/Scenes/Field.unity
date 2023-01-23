@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e063586c1087562459d10c63122be09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _host: ws://localhost:3000/
+  _host: ws://35.72.48.33:3000/
   _playerPrefab: {fileID: 8398985084612766863, guid: 3c36418f83ff7c948918b83bfb818dc4, type: 3}
   _chatText: {fileID: 1134953328}
   _chatInput: {fileID: 850977889}
